@@ -1,10 +1,11 @@
 package se.lexicon;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
     private final Customer customer;
-    private List<Product> products;
+    private List<Product> products = new ArrayList<>();
 
     public Order(Customer customer) {
         if (customer == null) {
@@ -45,11 +46,11 @@ public class Order {
     }
 
     public void printSummary() {
-        IO.println("--- * ---");
-        IO.println("Customer: " + customer.getName() + " | Total price: " + calculateTotal());
+        IO.println("--- Order Summary ---");
+        System.out.printf("%-15s : %-20s %n%-15s : %-5.2f%n", "Customer", customer.getName(), "Total price", calculateTotal());
         IO.println("Products: ");
         for (Product product : products) {
-            IO.println(" - " + product.getName());
+            System.out.printf(" - %-20s : %-5.2f%n", product.getName(), product.getPrice());
         }
     }
 }
