@@ -1,0 +1,9 @@
+package se.lexicon.parking;
+
+public class Car {
+    private String licensePlate;
+
+    public Car(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+}
