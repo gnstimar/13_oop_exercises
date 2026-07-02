@@ -11,7 +11,7 @@ public class LoanAccount extends Account {
     @Override
     public void processMonth() {
         double loan = getBalance() * loanRate/100;
-        deposit(loan);
+        withdraw(loan);
         IO.println("Holder: " + super.getHolder() + " loan interest added.");
     }
 }

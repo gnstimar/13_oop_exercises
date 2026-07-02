@@ -12,7 +12,7 @@ public class Bank {
     }
 
     public void addAccount(Account account) {
-        // TODO shall i add extra check here???
+        java.util.Objects.requireNonNull(account, "Account cannot be null.");
         accounts.add(account);
     }
 
