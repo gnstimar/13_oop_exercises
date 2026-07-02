@@ -1,7 +1,7 @@
 package se.lexicon.bank;
 
 public class LoanAccount extends Account {
-    private double loanRate;
+    private final double loanRate;
 
     public LoanAccount(String holder, double balance, double loanRate) {
         super(holder, balance);
@@ -10,7 +10,7 @@ public class LoanAccount extends Account {
 
     @Override
     public void processMonth() {
-        double loan = getBalance() * loanRate;
+        double loan = getBalance() * loanRate/100;
         deposit(loan);
         IO.println("Holder: " + super.getHolder() + " loan interest added.");
     }

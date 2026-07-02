@@ -1,7 +1,7 @@
 package se.lexicon.bank;
 
 public class SavingsAccount extends Account {
-    private double interestRate;
+    private final double interestRate;
 
     public SavingsAccount(String holder, double balance, double interestRate) {
         super(holder, balance);
@@ -10,7 +10,7 @@ public class SavingsAccount extends Account {
 
     @Override
     public void processMonth() {
-        double interest = getBalance() * interestRate;
+        double interest = getBalance() * interestRate/100;
         deposit(interest);
         IO.println("Holder: " + super.getHolder() + " interest credited");
     }
